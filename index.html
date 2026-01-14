@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoàng Nam Hub | Game & Social Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Quicksand:wght@400;700&display=swap');
+
+        body {
+            background: #020617;
+            color: #f8fafc;
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng Admin RGB cực đẹp */
+        .admin-glow {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(90deg, #ff0000, #00ff00, #00ffff, #ff00ff, #ff0000);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgb-text 8s linear infinite;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        @keyframes rgb-text {
+            0% { background-position: 0%; }
+            100% { background-position: 400%; }
+        }
+
+        /* Hiệu ứng Discord lắc lư */
+        .btn-discord {
+            background: #5865F2;
+            animation: shake 3s infinite;
+        }
+
+        @keyframes shake {
+            0%, 90%, 100% { transform: rotate(0); }
+            92% { transform: rotate(5deg); }
+            94% { transform: rotate(-5deg); }
+            96% { transform: rotate(5deg); }
+            98% { transform: rotate(-5deg); }
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Hạt sáng nền bay */
+        #bg-canvas {
+            position: fixed;
+            top: 0; left: 0; z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <nav class="glass sticky top-0 z-50 px-6 py-4 flex justify-between items-center border-b border-cyan-500/20">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center shadow-[0_0_15px_#06b6d4]">
+                <i class="fas fa-user-shield text-white"></i>
+            </div>
+            <span class="admin-glow text-lg">LE HOANG NAM</span>
+        </div>
+        
+        <div class="hidden md:flex space-x-6 items-center font-bold text-sm">
+            <a href="https://discord.gg/PpzMWvcpa" target="_blank" class="btn-discord px-4 py-2 rounded-full flex items-center gap-2 hover:opacity-90 transition shadow-lg">
+                <i class="fab fa-discord text-lg"></i> THAM GIA DISCORD
+            </a>
+            <button onclick="alert('Tính năng Đăng ký đang được cập nhật Backend!')" class="border border-cyan-500 text-cyan-400 px-5 py-2 rounded-full hover:bg-cyan-500 hover:text-white transition">
+                ĐĂNG KÝ
+            </button>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 pt-16 pb-20 text-center">
+        <div class="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
+            <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span class="text-xs font-bold text-gray-300">SERVER STATUS: ONLINE (v4.0.1)</span>
+        </div>
+
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter">NAM <span class="text-cyan-500">HUB</span></h1>
+        <p class="text-gray-400 max-w-xl mx-auto mb-10 text-lg">Hệ thống Mod Skin & Dịch vụ MXH uy tín số 1 Việt Nam. Hỗ trợ 24/7 qua Discord và Telegram.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div class="glass p-8 rounded-[2rem] hover:border-cyan-500/50 transition duration-500 group relative">
+                <div class="absolute inset-0 bg-cyan-500/5 rounded-[2rem] opacity-0 group-hover:opacity-100 transition"></div>
+                <i class="fab fa-facebook text-5xl text-blue-500 mb-6 block"></i>
+                <h3 class="text-2xl font-bold mb-4">SOCIAL MEDIA</h3>
+                <p class="text-sm text-gray-400 mb-6">Buff Follow, Like, View cho FB, TikTok, IG tự động.</p>
+                <button class="w-full py-3 bg-white text-black font-bold rounded-xl hover:bg-cyan-500 hover:text-white transition">VÀO HỆ THỐNG</button>
+            </div>
+
+            <div class="glass p-8 rounded-[2rem] hover:border-orange-500/50 transition duration-500 group relative">
+                <div class="absolute inset-0 bg-orange-500/5 rounded-[2rem] opacity-0 group-hover:opacity-100 transition"></div>
+                <i class="fas fa-fire text-5xl text-orange-500 mb-6 block"></i>
+                <h3 class="text-2xl font-bold mb-4">MOD SKIN GAME</h3>
+                <p class="text-sm text-gray-400 mb-6">Liên Quân Mobile, Free Fire. Full trang phục & hiệu ứng.</p>
+                <button class="w-full py-3 bg-orange-600 font-bold rounded-xl hover:shadow-[0_0_20px_rgba(234,88,12,0.5)] transition">TẢI TOOL NGAY</button>
+            </div>
+
+            <div class="glass p-8 rounded-[2rem] border-2 border-indigo-500/30 bg-indigo-500/5 transition duration-500 group">
+                <i class="fab fa-discord text-5xl text-indigo-400 mb-6 block"></i>
+                <h3 class="text-2xl font-bold mb-4">CỘNG ĐỒNG</h3>
+                <p class="text-sm text-gray-400 mb-6">Giao lưu, hỗ trợ lỗi và nhận code giảm giá mỗi ngày.</p>
+                <a href="https://discord.gg/PpzMWvcpa" target="_blank" class="block w-full py-3 bg-indigo-500 font-bold rounded-xl text-center hover:bg-indigo-600 transition shadow-lg">
+                    VÀO SERVER NGAY
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-10 opacity-50 text-sm">
+        <p>&copy; 2026 Powered by <span class="font-bold">Lê Hoàng Nam</span></p>
+    </footer>
+
+    <script>
+        // Hiệu ứng hạt bay nền
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            for(let i=0; i<80; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2,
+                    speed: Math.random() * 0.5 + 0.1
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0,0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(6, 182, 212, 0.3)';
+            particles.forEach(p => {
+                p.y -= p.speed;
+                if(p.y < 0) p.y = canvas.height;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+        window.addEventListener('resize', () => { init(); });
+    </script>
+</body>
+</html>
